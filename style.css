@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+:root {
+  --purple-200: #64539d;
+  --blue-100: #44a8d2;
+  --sandy: #ff9a24;
+  --blue-500: #03091b;
+  --blue-500: #061235;
+  --pink: #d04c84;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(var(--blue-100), var(--blue-500));
+  background-size: cover;
+  aspect-ratio: 1;
+  position: relative;
+  transition: 1s ease;
+}
+
+.pumpkin {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  right: 50px;
+  bottom: -35px;
+  opacity: 0;
+  transform: scale(0);
+  transition: 1s ease;
+  padding: 10px;
+}
+
+.pumpkin.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.container .house {
+  width: 300px;
+  height: 400px;
+  z-index: 1;
+  position: absolute;
+  bottom: -75px;
+  left: 50px;
+}
+
+.container img {
+  position: absolute;
+  right: -10rem;
+  bottom: -1.5rem;
+}
+
+button {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: #df2222;
+  background-color: var(--blue-500);
+  font-family: "A Charming Font Expanded", sans-serif;
+  letter-spacing: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    outline: 2px solid #fff;
+  }
+}
+
+.glow {
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px #ff7300) drop-shadow(0 0 10px #ff7300);
+  }
+  100% {
+    filter: drop-shadow(0 0 20px #ff7f25) drop-shadow(0 0 30px #ff9449);
+  }
+}
+
+.glow-effect {
+  filter: drop-shadow(0 0 30px #ffd000);
+}
+
+.house-cls-9.active,
+.house-cls-11.active {
+  fill: rgb(0, 0, 0);
+}
+
+.house-cls-13 {
+  transition: fill 1s ease;
+}
+
+.house-cls-13.active {
+  fill: yellow;
+}
+
+.house-cls-12.active {
+  fill: rgb(19, 18, 18);
+  transition: 1s ease;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+}
+
+stop {
+  transition: stop-color 1s ease;
+}
+
+.bg-cls-8.active,
+.bg-cls-9.active {
+  fill: #202c25;
+}
+
+.bg-cls-8,
+.bg-cls-9,
+.bg-cls-10 {
+  transition: fill 1s ease;
+}
+
+.bg-cls-10.active {
+  fill: #193529;
+}
+
+.moon {
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+  background-color: #f4f6f0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.5),
+    0 0 50px rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 500px;
+  transform: translateX(-200px);
+  transition: 1s ease-in-out;
+  opacity: 0;
+}
+
+.moon.active {
+  transform: translateX(100px);
+  opacity: 1;
+}
+
+.halloween-text {
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: flickering;
+  animation-timing-function: step-start;
+  color: #912914;
+  font-family: "A Charming Font Expanded", cursive;
+  font-size: 120px;
+  opacity: 0;
+  scale: 0;
+  transition: 2s ease;
+  filter: drop-shadow(0 0 30px rgba(2555, 255, 255, 0.5));
+  padding: 100px;
+}
+
+.halloween-text.active {
+  opacity: 1;
+  scale: 1;
+}
+
+.center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes flickering {
+  0% {
+    color: #912914;
+    text-shadow: none;
+    transform: skewX(0);
+  }
+  5% {
+    color: #912914;
+    text-shadow: none;
+    transform: skewX(0);
+  }
+  10% {
+    color: #912914;
+    text-shadow: 1px 1px #eee;
+    transform: skewX(-15deg);
+  }
+  15% {
+    color: #ccc;
+    text-shadow: none;
+    transform: skewX(-15deg);
+  }
+  20% {
+    color: #912914;
+    text-shadow: none;
+    transform: skewX(0);
+  }
+  25% {
+    color: #ccc;
+    text-shadow: 2px 2px #912914;
+    transform: skewX(0);
+  }
+  30% {
+    color: #ccc;
+    text-shadow: 2px 2px #912914;
+    transform: skewX(0);
+  }
+  35% {
+    color: #ccc;
+    text-shadow: 2px 2px #912914;
+    transform: skewX(0);
+  }
+  37% {
+    color: #ccc;
+    text-shadow: 1px 1px #eee;
+    transform: skewX(0);
+  }
+  40% {
+    color: #912914;
+    text-shadow: 1px 1px #eee;
+    transform: skewX(0);
+  }
+  45% {
+    color: #912914;
+    text-shadow: 1px 1px #eee;
+    transform: skewX(0);
+  }
+  50% {
+    color: #912914;
+    text-shadow: none;
+    transform: skewX(0);
+  }
+  55% {
+    color: #912914;
+    text-shadow: none;
+    transform: skewX(0);
+  }
+  60% {
+    color: #912914;
+    text-shadow: none;
+    transform: skewX(0);
+  }
+  65% {
+    color: #912914;
+    text-shadow: none;
+    transform: skewX(0);
+  }
+  68% {
+    color: #912914;
+    text-shadow: 1px 1px #eee;
+    transform: skewX(0);
+  }
+  70% {
+    color: #912914;
+    text-shadow: 1px 1px #eee;
+    transform: skewX(0);
+  }
+  75% {
+    color: #912914;
+    text-shadow: 1px 1px #eee;
+    transform: skewX(10deg);
+  }
+  80% {
+    color: #912914;
+    text-shadow: 1px 1px #eee;
+    transform: skewX(10deg);
+  }
+  85% {
+    color: #912914;
+    text-shadow: 1px 1px #eee;
+    transform: skewX(10deg);
+  }
+  90% {
+    color: #912914;
+    text-shadow: none;
+    transform: skewX(0);
+  }
+  95% {
+    color: #912914;
+    text-shadow: 1px 1px #eee;
+    transform: skewX(0);
+  }
+  100% {
+    color: #912914;
+    text-shadow: none;
+    transform: skewX(0);
+  }
+}
